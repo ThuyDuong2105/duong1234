@@ -1,22 +1,41 @@
-/* Thiết lập font chữ cho toàn trang */
+* {
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    /* Căn giữa tất cả văn bản (h1 và p) */
+    text-align: center; 
 }
 
-/* 1. Định dạng Flex Container (Khung màu xanh) */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Định dạng Flex Container */
 .day {
-  display: flex;             /* Kích hoạt Flexbox */
-  background-color: #2196F3; /* Màu xanh biển */
-  padding: 10px;             /* Khoảng cách giữa khung xanh và các ô ngày */
+    display: flex;
+    background-color: #2196F3; /* Màu xanh biển */
+    padding: 10px;
+    /* Căn giữa nội dung bên trong flex container */
+    justify-content: center; 
+    margin-bottom: 20px;
 }
 
-/* 2. Định dạng các ô ngày bên trong (Flex Items) */
+/* Định dạng các ô ngày bên trong */
 .day > div {
-  background-color: #f1f1f1; /* Màu xám nhạt */
-  margin: 10px;              /* Khoảng cách giữa các ô ngày */
-  padding: 20px;             /* Khoảng cách từ chữ đến viền ô */
-  font-size: 30px;           /* Kích thước chữ to như trong hình */
-  flex: 1;                   /* Giúp các ô có độ rộng bằng nhau */
-  text-align: center;        /* Căn giữa chữ trong ô */
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    /* Bỏ flex: 1 nếu muốn các ô co lại vừa với chữ, 
+       hoặc giữ nguyên nếu muốn các ô đều nhau */
+    flex: 1; 
+}
+
+/* Định dạng các đoạn văn bản bên dưới */
+p {
+    margin: 10px 0;
 }
