@@ -1,67 +1,22 @@
-* {
-  box-sizing: border-box;
-}
-
+/* Thiết lập font chữ cho toàn trang */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* Định dạng Header */
-header {
-  background-color: #f1f1f1;
-  padding: 30px;
-  text-align: center;
-}
-
-/* Định dạng thanh menu điều hướng */
-.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333; /* Màu đen xám */
-}
-
-.topnav li {
-  float: left;
-}
-
-.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.topnav li a:hover {
-  background-color: #111;
-}
-
-/* Bố cục Flexbox cho 3 cột */
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Cột chính ở giữa chiếm 50% độ rộng */
-.main {
-  flex: 50%;
-  background-color: white;
+  font-family: Arial, sans-serif;
   padding: 20px;
 }
 
-/* Hai cột bên cạnh mỗi cột chiếm 25% độ rộng */
-.side {
-  flex: 25%;
-  background-color: #fff;
-  padding: 20px;
+/* 1. Định dạng Flex Container (Khung màu xanh) */
+.day {
+  display: flex;             /* Kích hoạt Flexbox */
+  background-color: #2196F3; /* Màu xanh biển */
+  padding: 10px;             /* Khoảng cách giữa khung xanh và các ô ngày */
 }
 
-/* Phản hồi (Responsive): Chuyển thành 1 cột trên màn hình nhỏ */
-@media screen and (max-width: 700px) {
-  .flex-container {
-    flex-direction: column;
-  }
+/* 2. Định dạng các ô ngày bên trong (Flex Items) */
+.day > div {
+  background-color: #f1f1f1; /* Màu xám nhạt */
+  margin: 10px;              /* Khoảng cách giữa các ô ngày */
+  padding: 20px;             /* Khoảng cách từ chữ đến viền ô */
+  font-size: 30px;           /* Kích thước chữ to như trong hình */
+  flex: 1;                   /* Giúp các ô có độ rộng bằng nhau */
+  text-align: center;        /* Căn giữa chữ trong ô */
 }
