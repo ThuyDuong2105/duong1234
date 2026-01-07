@@ -1,41 +1,37 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Đảm bảo căn giữa cho toàn bộ văn bản trong trang */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    /* Căn giữa tất cả văn bản (h1 và p) */
-    text-align: center; 
+  font-family: Arial, sans-serif;
+  text-align: center; /* Căn giữa h1 và các thẻ p */
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
-    margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-/* Định dạng Flex Container */
+/* Khung Flex Container màu xanh dương */
 .day {
-    display: flex;
-    background-color: #2196F3; /* Màu xanh biển */
-    padding: 10px;
-    /* Căn giữa nội dung bên trong flex container */
-    justify-content: center; 
-    margin-bottom: 20px;
+  display: flex;                /* Kích hoạt flexbox */
+  background-color: #1e90ff;    /* Màu xanh dương đậm như hình */
+  padding: 10px;                /* Tạo khoảng đệm màu xanh xung quanh các ô */
+  justify-content: center;      /* Căn giữa các ô ngày vào giữa khung xanh */
+  margin-bottom: 20px;
 }
 
-/* Định dạng các ô ngày bên trong */
+/* Các ô ngày (Flex Items) */
 .day > div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-    /* Bỏ flex: 1 nếu muốn các ô co lại vừa với chữ, 
-       hoặc giữ nguyên nếu muốn các ô đều nhau */
-    flex: 1; 
+  background-color: #e7e7e7;    /* Màu xám nhạt */
+  padding: 20px;                /* Khoảng cách từ chữ đến viền ô */
+  margin: 5px;                  /* Khoảng cách giữa các ô ngày (tạo đường kẻ xanh) */
+  font-size: 25px;              /* Kích thước chữ */
+  flex: 1;                      /* Quan trọng: Để các ô có chiều rộng bằng nhau khít khung */
+  min-width: 100px;             /* Đảm bảo chữ không bị quá hẹp */
 }
 
-/* Định dạng các đoạn văn bản bên dưới */
+/* Căn lề cho các đoạn văn bản bên dưới */
 p {
-    margin: 10px 0;
+  font-size: 16px;
+  margin: 5px 0;
 }
