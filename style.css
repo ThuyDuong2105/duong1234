@@ -1,44 +1,70 @@
-/* Thiết lập cơ bản */
+/* Thiết lập chung */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
-/* 1. Định dạng thanh menu bên trái (Sidenav) */
-.sidenav {
-  height: 100%;       /* Chiều cao hết toàn bộ màn hình */
-  width: 200px;       /* Độ rộng của menu */
-  position: fixed;    /* Cố định vị trí khi cuộn trang */
-  z-index: 1;         /* Đảm bảo menu nằm trên cùng */
-  top: 0;             /* Sát mép trên */
-  left: 0;            /* Sát mép trái */
-  background-color: #111; /* Màu nền đen */
-  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
-  padding-top: 20px;
+/* Định dạng Header */
+header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
 }
 
-/* Định dạng các đường link trong menu */
-.sidenav a {
-  padding: 15px 25px;
+/* 1. Định dạng thanh điều hướng (Topnav) */
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav li {
+  float: left;
+}
+
+.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  font-size: 20px;
-  color: #818181;    /* Màu chữ xám nhạt */
-  display: block;    /* Mỗi link nằm trên một dòng */
 }
 
-/* Hiệu ứng khi di chuột qua link */
-.sidenav a:hover {
-  color: #f1f1f1;    /* Chữ sáng lên khi hover */
+.topnav li a:hover {
+  background-color: #111;
 }
 
-/* 2. Định dạng phần nội dung chính (Content) */
-.content {
-  margin-left: 200px; /* Quan trọng: Đẩy nội dung sang phải để không bị menu đè lên */
-  padding: 0px 20px;
+/* 2. Định dạng Flexbox Container (Chia 3 cột) */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép rớt dòng khi màn hình nhỏ */
 }
 
-/* Responsive: Điều chỉnh cho màn hình nhỏ (tùy chọn) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+/* Cột nội dung chính (giữa) chiếm nhiều không gian nhất */
+.main {
+  flex: 50%;
+  padding: 20px;
+}
+
+/* Hai cột bên (Side) chiếm ít không gian hơn */
+.side {
+  flex: 25%;
+  padding: 20px;
+}
+
+/* 3. Responsive: Khi màn hình nhỏ hơn 700px, các cột xếp chồng lên nhau */
+@media (max-width: 700px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .topnav li {
+    float: none;
+    width: 100%;
+  }
 }
