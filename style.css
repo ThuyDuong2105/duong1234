@@ -1,4 +1,3 @@
-/* Thiết lập chung */
 * {
   box-sizing: border-box;
 }
@@ -15,13 +14,13 @@ header {
   text-align: center;
 }
 
-/* 1. Định dạng thanh điều hướng (Topnav) */
+/* Định dạng thanh menu điều hướng */
 .topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #333; /* Màu đen xám */
 }
 
 .topnav li {
@@ -40,31 +39,29 @@ header {
   background-color: #111;
 }
 
-/* 2. Định dạng Flexbox Container (Chia 3 cột) */
+/* Bố cục Flexbox cho 3 cột */
 .flex-container {
   display: flex;
-  flex-wrap: wrap; /* Cho phép rớt dòng khi màn hình nhỏ */
+  flex-wrap: wrap;
 }
 
-/* Cột nội dung chính (giữa) chiếm nhiều không gian nhất */
+/* Cột chính ở giữa chiếm 50% độ rộng */
 .main {
   flex: 50%;
+  background-color: white;
   padding: 20px;
 }
 
-/* Hai cột bên (Side) chiếm ít không gian hơn */
+/* Hai cột bên cạnh mỗi cột chiếm 25% độ rộng */
 .side {
   flex: 25%;
+  background-color: #fff;
   padding: 20px;
 }
 
-/* 3. Responsive: Khi màn hình nhỏ hơn 700px, các cột xếp chồng lên nhau */
-@media (max-width: 700px) {
+/* Phản hồi (Responsive): Chuyển thành 1 cột trên màn hình nhỏ */
+@media screen and (max-width: 700px) {
   .flex-container {
     flex-direction: column;
-  }
-  .topnav li {
-    float: none;
-    width: 100%;
   }
 }
