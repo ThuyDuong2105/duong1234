@@ -7,20 +7,20 @@ body {
   margin: 0;
 }
 
-/* Định dạng Header: Căn giữa nội dung */
+/* 1. Header: Căn giữa chữ My Header và đoạn văn */
 header {
   background-color: #f1f1f1;
   padding: 30px;
-  text-align: center;
+  text-align: center; /* Căn giữa nội dung quan trọng nhất */
 }
 
-/* Định dạng thanh Topnav ngang */
+/* 2. Thanh điều hướng Topnav */
 .topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333; /* Màu xám đen */
+  background-color: #444; /* Màu xám đậm như hình */
 }
 
 .topnav li {
@@ -39,32 +39,27 @@ header {
   background-color: #111;
 }
 
-/* Thiết lập bố cục Flexbox cho 3 cột */
+/* 3. Bố cục Flexbox 3 cột */
 .flex-container {
   display: flex;
-  flex-wrap: wrap; /* Cho phép rớt dòng khi màn hình nhỏ */
+  flex-wrap: wrap;
 }
 
-/* Cột chính chiếm 50% chiều rộng */
-.main {
-  flex: 50%;
-  padding: 20px;
-}
-
-/* Hai cột phụ mỗi bên chiếm 25% chiều rộng */
+/* Cột Side (2 bên) */
 .side {
-  flex: 25%;
+  flex: 20%; /* Chiếm khoảng 20% như hình mẫu */
   padding: 20px;
 }
 
-/* Kỹ thuật Responsive: Khi màn hình nhỏ hơn 700px sẽ chuyển thành 1 cột */
-@media (max-width: 700px) {
+/* Cột Main Content (giữa) */
+.main {
+  flex: 60%; /* Chiếm phần lớn diện tích ở giữa */
+  padding: 20px;
+}
+
+/* 4. Responsive: Khi màn hình nhỏ hơn 700px xếp thành 1 hàng dọc */
+@media screen and (max-width: 700px) {
   .flex-container {
     flex-direction: column;
-  }
-  
-  .topnav li {
-    float: none;
-    width: 100%;
   }
 }
