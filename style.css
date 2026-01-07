@@ -1,37 +1,70 @@
-/* Đảm bảo căn giữa cho toàn bộ văn bản trong trang */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center; /* Căn giữa h1 và các thẻ p */
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+}
+
+/* Định dạng Header: Căn giữa nội dung */
+header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Định dạng thanh Topnav ngang */
+.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333; /* Màu xám đen */
+}
+
+.topnav li {
+  float: left;
+}
+
+.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav li a:hover {
+  background-color: #111;
+}
+
+/* Thiết lập bố cục Flexbox cho 3 cột */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép rớt dòng khi màn hình nhỏ */
+}
+
+/* Cột chính chiếm 50% chiều rộng */
+.main {
+  flex: 50%;
   padding: 20px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+/* Hai cột phụ mỗi bên chiếm 25% chiều rộng */
+.side {
+  flex: 25%;
+  padding: 20px;
 }
 
-/* Khung Flex Container màu xanh dương */
-.day {
-  display: flex;                /* Kích hoạt flexbox */
-  background-color: #1e90ff;    /* Màu xanh dương đậm như hình */
-  padding: 10px;                /* Tạo khoảng đệm màu xanh xung quanh các ô */
-  justify-content: center;      /* Căn giữa các ô ngày vào giữa khung xanh */
-  margin-bottom: 20px;
-}
-
-/* Các ô ngày (Flex Items) */
-.day > div {
-  background-color: #e7e7e7;    /* Màu xám nhạt */
-  padding: 20px;                /* Khoảng cách từ chữ đến viền ô */
-  margin: 5px;                  /* Khoảng cách giữa các ô ngày (tạo đường kẻ xanh) */
-  font-size: 25px;              /* Kích thước chữ */
-  flex: 1;                      /* Quan trọng: Để các ô có chiều rộng bằng nhau khít khung */
-  min-width: 100px;             /* Đảm bảo chữ không bị quá hẹp */
-}
-
-/* Căn lề cho các đoạn văn bản bên dưới */
-p {
-  font-size: 16px;
-  margin: 5px 0;
+/* Kỹ thuật Responsive: Khi màn hình nhỏ hơn 700px sẽ chuyển thành 1 cột */
+@media (max-width: 700px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  
+  .topnav li {
+    float: none;
+    width: 100%;
+  }
 }
